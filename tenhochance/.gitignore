@@ -1,0 +1,79 @@
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+# Arquivos de compilação do Java
+*.class
+
+# Arquivos de empacotamento e distribuição do Maven
+target/
+*.jar
+*.war
+*.ear
+
+# Arquivos específicos do Spring Boot
+!**/src/main/**/application-*.yml
+!**/src/test/**/application-*.yml
+spring-boot-devtools/
+
+
+# Arquivos e diretórios do IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+
+# Arquivos e diretórios do Eclipse
+.settings/
+*.launch
+*.metadata
+*.cproject
+*.project
+
+# Arquivos de log
+*.log
+
+# Arquivos de banco de dados incorporados
+*.db
+*.h2.db
+*.h2.sql
+
+# Outros arquivos e diretórios ignorados
+.DS_Store
+node_modules/
+npm-debug.log
+dist/
+
+# Arquivos específicos do OS X
+.DS_Store
+.AppleDouble
+.LSOverride

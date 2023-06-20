@@ -1,0 +1,51 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-6">
+      <select id="course" class="custom-select" [(ngModel)]="cursoSelecionado" (ngModelChange)="onCursoSelecionadoChange($event)">
+        <option [value]="null">Cursos</option>
+        <!-- Adicionar opções dinamicamente -->
+        <option *ngFor="let curso of cursos" [value]="curso.id">{{ trataString(curso.nome) }}</option>
+      </select>
+    </div>
+  
+    <div class="col-6">
+      <select id="course" class="custom-select" [(ngModel)]="sistemaSelecionado" (ngModelChange)="onSistemaSelecionadoChange($event)">
+        <option [value]="null">Sistemas de Seleção</option>
+        <!-- Adicionar opções dinamicamente -->
+        <option *ngFor="let sistema of sistemasSelecao" [value]="sistema.url">{{ sistema.nome }}</option>
+      </select>
+    </div>
+  </div>
+
+  <div>
+    <mat-table [dataSource]="candidatos">
+
+      <ng-container matColumnDef="numeroInscricao">
+        <mat-header-cell *matHeaderCellDef> Número de Inscrição </mat-header-cell>
+        <mat-cell *matCellDef="let candidato"> {{candidato.numeroInscricao}} </mat-cell>
+      </ng-container>
+    
+      <ng-container matColumnDef="nome">
+        <mat-header-cell *matHeaderCellDef> Nome </mat-header-cell>
+        <mat-cell *matCellDef="let candidato"> {{candidato.nome}} </mat-cell>
+      </ng-container>
+    
+      <ng-container matColumnDef="notaFinal">
+        <mat-header-cell *matHeaderCellDef> Nota Final </mat-header-cell>
+        <mat-cell *matCellDef="let candidato"> {{candidato.notaFinal}} </mat-cell>
+      </ng-container>
+    
+      <ng-container matColumnDef="aprovado">
+        <mat-header-cell *matHeaderCellDef> Aprovado </mat-header-cell>
+        <mat-cell *matCellDef="let candidato"> {{candidato.aprovado ? 'Sim' : 'Não'}} </mat-cell>
+      </ng-container>
+    
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    
+    </mat-table>
+    
+    
+    <mat-paginator [pageSize]="20" [length]="resultsLength" showFirstLastButtons></mat-paginator>
+  </div>
+</div>
